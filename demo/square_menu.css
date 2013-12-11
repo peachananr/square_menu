@@ -38,7 +38,7 @@ body.sm-activate {
 }
 
 
-.sm-activate .sm-menu {
+.sm-menu.ff-hack {
   opacity: 1;
   visibility: visible;
   top: 50%;
@@ -50,7 +50,7 @@ body.sm-activate {
   -moz-transform: translate3d(50%, 0, 0) scale(0.002, 1);
   -ms-transform: translate3d(50%, 0, 0) scale(0.002, 1);
   -o-transform: translate3d(50%, 0, 0) scale(0.002, 1);
-  transform: translate3d(50%, 0, 0);
+  transform: translate3d(50%, 0, 0) scale(0.002, 1);
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;

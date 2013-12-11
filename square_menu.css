@@ -38,7 +38,7 @@ body.sm-activate {
 }
 
 
-.sm-activate .sm-menu {
+.sm-menu.ff-hack {
   opacity: 1;
   visibility: visible;
   top: 50%;
@@ -50,10 +50,10 @@ body.sm-activate {
   -moz-transform: translate3d(50%, 0, 0) scale(0.002, 1);
   -ms-transform: translate3d(50%, 0, 0) scale(0.002, 1);
   -o-transform: translate3d(50%, 0, 0) scale(0.002, 1);
-  transform: translate3d(50%, 0, 0);
+  transform: translate3d(50%, 0, 0) scale(0.002, 1);
   -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   width: 50%;
   height: 100%;
@@ -82,8 +82,12 @@ body.sm-activate {
 .sm-menu .sm-nav .nav-inner{
   display: none;
   -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
   animation-fill-mode: both;
   vertical-align: middle;
   white-space: normal;
@@ -169,8 +173,8 @@ body.sm-activate {
   overflow: hidden;
   visibility: hidden;
   -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out; 
 }
 

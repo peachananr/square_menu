@@ -42,40 +42,43 @@
       if ($("body").hasClass("sm-activate")) {
         $(".sm-menu").find(".sm-nav").removeClass("animated")
         $(".sm-menu").one("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
-          $("body").removeClass("sm-activate")
+          $("body").removeClass("sm-activate").find(".sm-menu").removeClass("ff-hack")
         });
       }
     }
     
     $.fn.openMenu = function() {
-      $(".sm-menu").addClass("animated")
+      
+      $(".sm-menu").addClass("animated").addClass("ff-hack")
       
       if (!$("body").hasClass("sm-activate")) {
         if ($(".sm-overlay").length < 1) $("<div class='sm-overlay'></div>").hide().prependTo("body")
         $(".sm-overlay").fadeIn("fast", function() {
           $("body").addClass("sm-activate")
+          var fired = false;
           $("body").one("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(e){
-            if (e.originalEvent.propertyName == 'top' || e.originalEvent.propertyName == 'left') {
-              $(".sm-menu .sm-nav").addClass("animated");
-              $(".sm-menu .sm-nav").one("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(e){
-                if (e.originalEvent.propertyName == '-webkit-transform') {
-                  
-                  if (settings.closeButton != false) {
-                    el.prepend("<a href='#' class='sm-close'>" + settings.closeButton + "</a>")
+            if ( ! fired ) {
+                fired = true;
+                $(".sm-menu .sm-nav").addClass("animated");
+                $(".sm-menu .sm-nav").one("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(e){
+                  if (e.originalEvent.propertyName == '-webkit-transform' || e.originalEvent.propertyName == 'transform' || e.originalEvent.propertyName == '-o-transform' || e.originalEvent.propertyName == '-moz-transform') {
 
-                    $(".sm-close").click(function() {
+                    if (settings.closeButton != false) {
+                      el.prepend("<a href='#' class='sm-close'>" + settings.closeButton + "</a>")
+
+                      $(".sm-close").click(function() {
+                        el.closeMenu();
+                        return false;
+                      });
+                    }
+
+                    $(".sm-menu .sm-nav:first-child .nav-inner").addClass("animated flyInLeft")
+                    $(".sm-menu .sm-nav:nth-child(2) .nav-inner").addClass("animated flyInRight")
+                    $(".sm-overlay:not(.clicked)").addClass("clicked").click(function() {
                       el.closeMenu();
-                      return false;
                     });
                   }
-                  
-                  $(".sm-menu .sm-nav:first-child .nav-inner").addClass("animated flyInLeft")
-                  $(".sm-menu .sm-nav:nth-child(2) .nav-inner").addClass("animated flyInRight")
-                  $(".sm-overlay:not(.clicked)").addClass("clicked").click(function() {
-                    el.closeMenu();
-                  });
-                }
-              });
+                });
             }
           });
         });
