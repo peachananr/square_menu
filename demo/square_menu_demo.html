@@ -1,0 +1,291 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jQuery Square Menu by Pete R. | The Pete Design</title>
+	<meta name="title" content="jQuery Square Menu by Pete R. | The Pete Design" />
+	<meta name="description" content="Create a Square-like Menu Animation for Website using jQuery and CSS3" />
+	<link rel="image_src" href="/images/square_menu_image.png" />
+
+	<meta content="http://www.thepetedesign.com/demos/square_menu_demo.html" property="og:url" />
+	<meta content="http://www.thepetedesign.com/images/square_menu_image.png" property="og:image" />
+	<link rel="shortcut icon" id="favicon" href="favicon.png"> 
+	<meta name="author" content="Pete R.">
+	<link rel="canonical" href="http://www.thepetedesign.com/demos/square_menu_demo.html" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<link href='square_menu.css' rel='stylesheet' type='text/css'>
+	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script type="text/javascript" src="jquery.square_menu.js"></script>
+  <style>
+    html {
+      height: 100%;
+    }
+    body {
+      background: #86B4CC;
+      padding: 0;
+      text-align: center;
+      font-family: 'open sans';
+      position: relative;
+      margin: 0;
+      height: 100%;
+    }
+    
+    .wrapper {
+    	height: auto !important;
+    	height: 100%;
+    	margin: 0 auto; 
+    	overflow: hidden;
+    }
+    
+    a {
+      text-decoration: none;
+    }
+    
+    
+    
+    h1, h2 {
+      width: 100%;
+      float: left;
+    }
+    h1 {
+      margin-top: 100px;
+      color: #2E3B4E;
+      font-weight: 100;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+      font-size: 70px;
+    }
+    h2 {
+      letter-spacing: 1px;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: 100;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    
+    .pointer {
+      color: #00B0FF;
+      font-family: 'Pacifico';
+      font-size: 24px;
+      margin-top: 15px;
+      position: fixed;
+      top: 62px;
+      left: 25px;
+    }
+    pre {
+      margin: 80px auto;
+    }
+    pre code {
+      padding: 35px;
+      border-radius: 5px;
+      font-size: 15px;
+      background: rgba(0,0,0,0.1);
+      border: rgba(0,0,0,0.05) 5px solid;
+      max-width: 500px;
+    }
+
+
+    .main {
+      float: left;
+      width: 100%;
+      margin: 0 auto;
+    }
+    
+    
+    .main h1 {
+      padding:20px 50px 10px;
+      float: left;
+      width: 100%;
+      font-size: 50px;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      font-weight: 100;
+      margin: 0;
+      padding-top: 25px;
+      font-family: 'open sans';
+      text-transform: uppercase;
+    }
+   
+    .main h1.demo1 {
+      background: #1ABC9C;
+    }
+    
+    .reload.bell {
+      font-size: 12px;
+      padding: 20px;
+      width: 45px;
+      text-align: center;
+      height: 47px;
+      border-radius: 50px;
+      -webkit-border-radius: 50px;
+      -moz-border-radius: 50px;
+    }
+    
+    .reload.bell #notification {
+      font-size: 25px;
+      line-height: 140%;
+    }
+    
+    .reload, .btn{
+      display: inline-block;
+      border: 4px solid #A2261E;
+      border-radius: 5px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      background: #CC3126;
+      display: inline-block;
+      line-height: 100%;
+      padding: 1em;
+      text-decoration: none;
+      color: #fff;
+      width: 100px;
+      line-height: 140%;
+      font-size: 12px;
+      letter-spacing: 1px;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-family: open sans;
+    }
+    .reload:hover{
+      background: #A2261E;
+    }
+    .btn {
+      width: 230px;
+      color: #fff;
+      border: none;
+      margin-left: 10px;
+      background: #2186B8;
+    }
+    .clear {
+      width: auto;
+    }
+    .btn:hover, .btn:hover {
+      background: #1494D3;
+    }
+    .btns {
+      width: 410px;
+      margin: 50px auto;
+    }
+    .credit {
+      text-align: center;
+      color: #fff;
+      padding: 10px;
+      font-weight: 100;
+      text-transform: capitalize;
+      font-style: italic;
+      font-size: 14px;
+      margin: 0 0 60px 0;
+      float: left;
+      width: 100%;
+      letter-spacing: 1px;
+    }
+    .credit a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    
+    .back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-align: center;
+      display: block;
+      padding: 7px;
+      width: 100%;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      background: #86B4CC;
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 11px;
+      color: #fff;
+      -webkit-transition: all 200ms ease-out;
+      -moz-transition: all 200ms ease-out;
+      -o-transition: all 200ms ease-out;
+      transition: all 200ms ease-out;
+    }
+    .back:hover {
+      background: rgba(255,255,255,0.1);
+    }
+  
+    body .sm-button {
+      position: relative;
+      top: 0;
+      right: 0;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-size: 28px;
+      z-index: 10;
+    }
+    
+    body .sm-button:hover {
+      border-bottom: 4px solid white;
+    }
+    .page-container {
+      min-height: 300px;
+    }
+    
+    .sm-nav:nth-child(2) {
+      background: #7AAAC4;
+    }
+
+    .sm-menu .sm-nav:nth-child(2) .nav-inner > a{
+      font-size: 11px;
+      margin-bottom: 5px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+	</style>
+	<script>
+	  $(document).ready( function() {
+	    $(".sidemenu").square_menu();
+	  });
+		
+	</script>
+</head>
+<body>
+  <div class="wrapper">
+	  <div class="main">
+	    <div class="header">
+        <h1>jQuery Square Menu</h1>
+        <h2>Create a Square-like Menu Animation for Website using jQuery and CSS3</h2>
+        <p class="credit">Created by <a href="http://www.thepetedesign.com">Pete R.</a>, Founder of <a href="http://www.bucketlistly.com" target="_blank">BucketListly</a></p>
+        <div class="btns">
+  	      <a class="reload btn" href="https://github.com/peachananr/square_menu">Download on Github</a>
+  	    </div>
+  	  </div>
+  	  
+      <div class="page-container">
+        <div class="sidemenu">
+          <nav class="left">
+            <a href="http://www.bucketlistly.com">BucketListly</a>
+            <a href="http://blog.bucketlistly.com">My Life Stories</a>
+            <a href="http://www.thepetedesign.com">The Pete Design</a>
+          </nav>
+          <nav class="right">
+            <a href="http://blog.bucketlistly.com/post/67843428144/trekking-the-himalayas-annapurna-base-camp-in-7">Natural Nepal</a>
+            <a href="http://blog.bucketlistly.com/post/62418127132/4-days-traveling-around-the-majestic-myanmar-a">Majestic Myanmar</a>
+            <a href="http://blog.bucketlistly.com/post/59584109323/incredible-india-a-solo-travelers-journal-3">Incredible India 2/2</a>
+            <a href="http://blog.bucketlistly.com/post/59094956648/incredible-india-a-solo-travelers-journal-3-part">Incredible India 1/2</a>
+            <a href="http://blog.bucketlistly.com/post/56874058846/inspiring-indonesia-a-solo-travelers-journal-2">Inspiring Indonesia</a>
+            <a href="http://blog.bucketlistly.com/post/55263089542/curious-cambodia-a-solo-travelers-journal-1">Curious Cambodia</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <a class="back" href="http://www.thepetedesign.com/#design">Back to The Pete Design</a>
+    <a href="https://github.com/peachananr/square_menu"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 15;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+  </div>
+</body>
+</html>
