@@ -23,8 +23,48 @@ body.sm-activate {
   transition: all 0.5s ease-in-out;
 }
 
+.sm-menu.sm-bottom-left {
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+  top: 150%;
+  left: -150%;
+}
+
+.sm-menu.sm-bottom-right {
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+  top: 150%;
+  left: 150%;
+}
+
 .sm-menu.sm-top {
   top: -150%;
+}
+
+.sm-menu.sm-top-left {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: -150%;
+  left: -150%;
+}
+
+.sm-menu.sm-top-right {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: -150%;
+  left: 150%;
 }
 
 .sm-menu.sm-left {
@@ -37,6 +77,13 @@ body.sm-activate {
   left: 150%;
 }
 
+.sm-menu.re-rotate {
+  -webkit-transform: rotate(0);
+  -moz-transform: rotate(0);
+  -ms-transform: rotate(0);
+  -o-transform: rotate(0);
+  transform: rotate(0);
+}
 
 .sm-menu.ff-hack {
   opacity: 1;

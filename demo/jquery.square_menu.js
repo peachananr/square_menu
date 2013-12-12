@@ -34,7 +34,7 @@
     
     $.fn.closeMenu = function() {
       
-      $(".sm-menu").addClass("animated")
+      $(".sm-menu").addClass("animated").removeClass("re-rotate")
       $(".sm-menu .sm-close").remove()
       $(".sm-menu .sm-nav:first-child .nav-inner").removeClass("animated flyInLeft")
       $(".sm-menu .sm-nav:nth-child(2) .nav-inner").removeClass("animated flyInRight")
@@ -62,7 +62,7 @@
                 $(".sm-menu .sm-nav").addClass("animated");
                 $(".sm-menu .sm-nav").one("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(e){
                   if (e.originalEvent.propertyName == '-webkit-transform' || e.originalEvent.propertyName == 'transform' || e.originalEvent.propertyName == '-o-transform' || e.originalEvent.propertyName == '-moz-transform') {
-
+                    $(".sm-menu").addClass("re-rotate")
                     if (settings.closeButton != false) {
                       el.prepend("<a href='#' class='sm-close'>" + settings.closeButton + "</a>")
 
