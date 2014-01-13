@@ -69,4 +69,4 @@ Now you will have a beautifully crafted menu animation like you see on [Squareup
 If you want to see more of my plugins, visit [The Pete Design](http://www.thepetedesign.com/#design), or follow me on [Twitter](http://www.twitter.com/peachananr) and [Github](http://www.github.com/peachananr).
 
 ## Other Resources
-- Tutorial (Coming Soon)
+- [Tutorial](http://www.onextrapixel.com/2014/01/09/create-a-square-like-3d-animated-menu-gallery-with-jquery-square-menu/)
