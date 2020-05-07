@@ -2,10 +2,8 @@
 Create a [Square-like](http://www.squareup.com) Menu Animation for Website using jQuery and CSS3
 Created by [Pete R.](http://www.thepetedesign.com), Founder of [BucketListly](http://www.bucketlistly.com)
 
-[![Square Menu](http://www.thepetedesign.com/images/square_menu_image.png "Square Menu")](http://www.thepetedesign.com/demos/square_menu_demo.html)
-
 ## Demo
-[View demo](http://www.thepetedesign.com/demos/square_menu_demo.html)
+[View demo](http://peachananr.github.io/square_menu/demo/square_menu_demo.html)
 
 ## Compatibility
 Modern browsers such as Chrome, Firefox, and Safari on both desktop and smartphones have been tested. I have not tested this on IE.
